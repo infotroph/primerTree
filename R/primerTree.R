@@ -7,7 +7,7 @@
 #' \code{\link{search_primer_pair}} which takes a primer pair and returns an
 #' primerTree object of the search results
 #' \code{\link{plot.primerTree}} a S3 method for plotting the primerTree object
-#' obtained using \code{\link{search_primer_pair}}
+#' obtained using \code{\link{search_primer_pair}}.
 #' @name primerTree
 #' @docType package
 #' @import ggplot2 grid XML ape httr plyr directlabels gridExtra
@@ -78,27 +78,29 @@ plot.primerTree = function(x, ranks=NULL, main=NULL, ...){
     }
   }
 }
-#' Automatic primer searching Search a given primer pair, retrieving the alignment
+#' Automatic primer searching 
+#' 
+#' Search a given primer pair, retrieving the alignment
 #' results, their product sequences, the taxonomic information for the sequences,
-#' a multiple alignment of the products
+#' a multiple alignment of the products.
 #' @param name name to give to the primer pair
 #' @param simplify use simple names for primer hit results or complex
 #' @param .progress name of the progress bar to use, see
 #' \code{\link{create_progress_bar}}
 #' @param clustal_options a list of options to pass to clustal omega, see
-#'    \code{link{clustalo}} for a list of options
+#'    \code{\link{clustalo}} for a list of options
 #' @param distance_options a list of options to pass to dist.dna, see
-#'    \code{link{dist.dna}} for a list of options
+#'    \code{\link{dist.dna}} for a list of options
 #' @inheritParams primer_search
 #' @return A list with the following elements,
 #' \item{name}{name of the primer pair}
 #' \item{BLAST_result}{html blast results from Primer-BLAST as
-#'  'a \code{\link{response}}} object.
+#'    a \code{\link{response}} object}
 #' \item{taxonomy}{taxonomy for the primer products from NCBI}
 #' \item{sequence}{sequence of the primer products}
 #' \item{alignment}{multiple alignment of the primer products}
 #' \item{tree}{phylogenetic tree of the reconstructed from the
-#' 'multiple alignment}
+#'    multiple alignment}
 #' @seealso \code{\link{primer_search}}, \code{\link{clustalo}}
 #' @export
 #' @examples
