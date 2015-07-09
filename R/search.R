@@ -1,9 +1,9 @@
 #PrimerTree
 #Copyright (C) 2013 Jim Hester
 
-#' Query a pair of primers using ncbi's Primer-BLAST, if primers contain iupac
+#' Query a pair of primers using ncbi's Primer-BLAST.
 #'
-#' ambiguity codes, enumerate all possible combinations and combine the
+#' If primers contain iupac ambiguity codes, enumerate all possible combinations and combine the
 #' results.
 #' @param forward forward primer to search by 5'-3' on plus strand
 #' @param reverse reverse primer to search by 5'-3' on minus strand
@@ -14,7 +14,7 @@
 #' @param ... additional arguments passed to Primer-Blast
 #' @param .parallel if 'TRUE', perform in parallel, using parallel backend
 #'        provided by foreach
-#' @param .progress name of the progress bar to use, see 'create_progress_bar'
+#' @param .progress name of the progress bar to use, see \code{\link{create_progress_bar}}
 #' @return data.frame of primer hits
 #' @export
 primer_search = function(forward, reverse, num_aligns=500, num_permutations=25, ..., .parallel=FALSE, .progress='none'){
